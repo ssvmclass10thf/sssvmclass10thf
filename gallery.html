@@ -1,0 +1,305 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Photo Gallery | SSSVM Class 10-F (Teal Theme)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #d0f0f6; /* Soft pastel teal background */
+      color: #004d40; /* Deep teal text */
+    }
+
+    .header {
+      background: linear-gradient(90deg, #4db6ac, #80deea); /* Teal to light cyan gradient */
+      color: #004d40;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 3em; /* same as homework */
+      font-weight: bold;
+      box-shadow: 0 4px 16px rgba(77, 182, 172, 0.3);
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .photo-card {
+      background-color: #e0f7fa; /* very light cyan */
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 77, 64, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 77, 64, 0.3);
+    }
+
+    .photo-card img {
+      width: 100%;
+      display: block;
+      border-bottom: 4px solid #4db6ac;
+      object-fit: cover;
+      height: 180px;
+      transition: filter 0.3s ease;
+    }
+
+    .photo-card:hover img {
+      filter: brightness(1.1);
+    }
+
+    .photo-caption {
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #00796b;
+      text-align: center;
+    }
+
+    .btn-wrapper {
+      text-align: center;
+      margin: 40px auto 30px auto;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: linear-gradient(to right, #00796b, #004d40);
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 0 14px #00796b, 0 0 28px #004d40;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(to right, #004d40, #00251a);
+      box-shadow: 0 0 20px #004d40, 0 0 40px #00251a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    📸 GALLERY
+  </div>
+
+  <div class="container">
+    <div class="gallery">
+      <div class="photo-card">
+         <iframe 
+      src="https://drive.google.com/file/d/1Dt4sGYTDIvHqul1arrIBZQUFlmA6PLrV/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+        <div class="photo-caption">Mrs. DIVYA MITTAL Ji (DM of DEORIA)</div>
+      </div>
+      <div class="photo-card">
+           <iframe 
+      src="https://drive.google.com/file/d/1DYQKfdS9KHLDBUqUYa0KKNe_ieZL5UVH/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1EGzoSIRMZHiPvAlLAebKiuC-nA6h0YnJ/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+        <iframe 
+      src="https://drive.google.com/file/d/1EFzd7Ctt--68AsSMqFHuKiRHMrFVnpFX/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DyJpzfAukEJCZtiivtrTa2Qu5Qki1Q8L/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1E5nrt8YWs8050u4eCjPnkzEMEizMHqId/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1EHtb-HTwZujsU8dFTHz_D55RhNBHzHd8/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+   
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DYn1xnEjSn69EjHi7lQf8V-mVjV4f9UU/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+      
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1Doi0RcqHu4BRIvW0Le_l5PsLYlZZIFNl/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+        
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DUfdeAwzhgfNU80C0DuwKRm9leojnCn_/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DIbdpcytCeExc7xopy7IhKbKy3j2tqPi/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+        
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DiSURQcZbDfgKtX0OmTAX2kJtGUHmPMI/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DIeNi83TxFMcpsLUWrx7VHbHyGQu9yBL/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DgcnnrlgDUxxILPKYkU1YpnW6B5u8RrD/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1EKVzOvdRfZza_KN-iDFuwDD9mlFR4Qpz/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DwBFbX9dshI3me885hYAZuw4uN2vYUIk/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DLCsle6bI6ZkP2-alB4tFdPfnWqxNoAq/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+     
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1E7hPNwFpX4uDewVS-oOcXr68Mbcjhpat/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+      <div class="photo-card">
+          <iframe 
+      src="https://drive.google.com/file/d/1DY4-NHff1VPKflaTBfUGO6GVcgT7dnAk/preview" 
+      width="100%" 
+      height="350" 
+      allow="autoplay"
+      style="border: none;"
+    ></iframe>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="btn-wrapper">
+    <a class="back-btn" href="index.html">← Back to Home</a>
+  </div>
+
+</body>
+

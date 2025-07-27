@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mindmaps | All Subjects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fefae0;
+      color: #333;
+    }
+
+    header, footer {
+      padding: 40px 20px;
+      background: linear-gradient(90deg, #3d405b, #81b29a);
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .toggle-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #457b9d, #a8dadc);
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      margin: 20px 0;
+      box-shadow: 0 0 12px rgba(69, 123, 157, 0.6);
+      transition: 0.3s ease-in-out;
+      text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 24px rgba(69, 123, 157, 1);
+    }
+
+    .subject-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+      margin-bottom: 40px;
+    }
+
+    .category-block {
+      background: #f0efeb;
+      border-left: 6px solid #3d405b;
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .category-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #3d405b;
+    }
+
+    ul.chapter-list {
+      list-style: disc;
+      margin-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    .chapter-list a {
+      color: #3d405b;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .chapter-list a:hover {
+      color: #2f3a53;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-home-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background-color: #81b29a;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px #81b29a;
+    }
+
+    .back-home-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #81b29a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MINDMAPS</h1>
+  </header>
+
+  <div class="container">
+    <button class="toggle-btn" onclick="toggleContent('sst')">SST</button>
+    <div class="subject-content" id="sst">
+      <div class="category-block">
+        <div class="category-title">Geography</div>
+        <ul class="chapter-list">
+          <li><a href="https://drive.google.com/file/d/1th5z2UswDuWQd75lGr4LS_P_y0L5VRYI/preview">Resources and Development</a></li>
+          <li><a href="https://drive.google.com/file/d/1DjzBCEGJOw9FbJsTC7wtBhTzIVbjQUz6/preview">Forest and Wildlife Resources</a></li>
+          <li><a href="https://drive.google.com/file/d/1IcDDRnyHxWD8dVixCZyn0J4Rc9Eq0O7D/preview">Water Resources</a></li>
+          <li><a href="https://drive.google.com/file/d/1kr_1P0yjLmlV4Rnr0DcO3yKw6lAMtkk_/preview">Agriculture</a></li>
+          <li><a href="https://drive.google.com/file/d/1pjrrSWKrUKRlsJ5ARAZVhtJdmw247cUP/preview">Minerals and Energy</a></li>
+          <li><a href="https://drive.google.com/file/d/1Z3idebWBQOqq5qyVhuctjpPaNbJ5IcKw/preview">Manufacturing Industries</a></li>
+          <li><a href="https://drive.google.com/file/d/10oi2U7-0KC2se3c9g5dLOAz163Q4lNex/preview">Lifelines of National Economy</a></li>
+        </ul>
+        
+        <div class="category-title">Economics</div>
+        <ul class="chapter-list">
+          <li><a href="https://drive.google.com/file/d/1K6GW48mMLPFXPPN1rwcXNIrtM5gKkDbn/preview">Development</a></li>
+          <li><a href="https://drive.google.com/file/d/1BkRsR7kmaDi9A5M2pnGE_tbC5BTDw05b/preview">Sectors of The Indian Economy</a></li>
+          <li><a href="https://drive.google.com/file/d/1rmCqijXf5TpIAvkp4bumj2HlK7VRwAzf/preview">Money and Credit</a></li>
+          <li><a href="https://drive.google.com/file/d/1-DU8zAEsjy-3psx9b5iEBRZA1lf8yi2p/preview">Globalisation and Indian Economy</a></li>
+
+          
+        </ul>
+        
+         <div class="category-title">Civics</div>
+        <ul class="chapter-list">
+          <li><a href="https://drive.google.com/file/d/1lvbVujAnOjxunQHSc5VOVv3qmh2o8pYn/preview">Power Sharing</a></li>
+          <li><a href="https://drive.google.com/file/d/1msxsdTfs7ZrrBCyGwyAtYQJn-Mu-QThn/preview">Federalism</a></li>
+          <li><a href="https://drive.google.com/file/d/1lyFruUfD8Y11gTheYz-SwL2tI5IDCumc/preview">Gender, Religion and Caste</a></li>
+          <li><a href="https://drive.google.com/file/d/191-8JOSVUdAFQeMkoltKQP7cHYBwV71K/preview">Political Parties</a></li>
+         <li><a href="https://drive.google.com/file/d/1LgoJ118Pjd9yOaej2cYq8sf_cc7nCatE/preview">Outcomes of Democracy</a></li>
+
+          
+        </ul>
+        
+         <div class="category-title">History</div>
+        <ul class="chapter-list">
+          <li><a href="https://drive.google.com/file/d/1aq7oety4t9E6oIuHoEkKVR83d8aJIwEV/preview">The Rise of Nationalism In Europe</a></li>
+          <li><a href="https://drive.google.com/file/d/12AK2IQi8bkU2GCv9v7K_IeFR7-ETsgzI/preview">Nationalism In India</a></li>
+          <li><a href="https://drive.google.com/file/d/1PSD_8Abqy2qWdprQLKBnyWNGkfr4MFEM/preview">The Making of a Global World</a></li>
+          <li><a href="https://drive.google.com/file/d/1R3wf9jDK7yfZHjD-GCWBRNlPS40k2S6-/preview">The Age of Industrialization</a></li>
+         <li><a href="https://drive.google.com/file/d/1bleBDg81yBW3vcL0YdZiKTU1kQF0XFW3/preview">Print Culture and The Modern World</a></li>
+
+          
+        </ul>
+      </div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleContent('science')">Science</button>
+    <div class="subject-content" id="science">
+      <div class="category-block">
+        <div class="category-title">Physics</div>
+        <ul class="chapter-list">
+      <li><a href="https://drive.google.com/file/d/1zI3CsXZ_twxuS1L7FFmGBXk9DA9XSfIH/preview">Light – Reflection and Refraction</a></li>
+      <li><a href="https://drive.google.com/file/d/1ndOW1WrjL46wAfFHnJ8VETU0cSMS8NN7/preview">Human Eye and The Colorful World</a></li>
+      <li><a href="https://drgle.com/file/d/1rhQOEgGe3ckQrRNjvX0qnRNHnEyjggSl/preview">Electricity</a></li>
+      <li><a href="https://drive.google.com/file/d/1EFE_qiNNRC9FHYM0g740725Qx2vNoHkJ/preview">Magnetic Effect of Electric Current</a></li>
+        </ul>
+        
+        <div class="category-title">Chemistry</div>
+        <ul class="chapter-list">
+      <li><a href="https://drive.google.com/file/d/14L8A8CWQYrENLOUt-uPHzNjnsvCdfarn/preview">Chemical Reactions and Equations</a></li>
+      <li><a href="https://drive.google.com/file/d/13AR616bAoTQRWgOA2BukMIyr-YmvD0uH/preview">Acids, Bases and Salts</a></li>
+      <li><a href="https://drive.google.com/file/d/11Q3k4Lxbsjx9ahOFk4pKg7zeie6mCgDD/preview">Metal and Non-Metals</a></li>
+      <li><a href="https://drive.google.com/file/d/1FzQ_S2Sq3RxuYfIuksg6QN0wJ4PRKnW0/preview">Carbon and Its Compounds</a></li>
+        </ul>
+        
+         <div class="category-title">Biology</div>
+        <ul class="chapter-list">
+      <li><a href="https://drive.google.com/file/d/1TF6ppkbDUCshADs7wtDq6WLwG0u2IDwz/preview">Life Processes</a></li>
+      <li><a href="https://drive.google.com/file/d/15ogEWlAi5rboxcUAYHPXPV2S1j2Rc0SA/preview">Control and Coordination</a></li>
+      <li><a href="https://drive.google.com/file/d/1mlU89ap-1y7wk9C-Vz_Gmp0D6v9KE2O0/preview">Heredity And Evolution</a></li>
+      <li><a href="https://drive.google.com/file/d/1zok8zjmHYJYYDySXZBkXtYtHi65HQ2mq/preview">Our Environment</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <button class="toggle-btn" onclick="toggleContent('maths')">Maths</button>
+    <div class="subject-content" id="maths">
+      <div class="category-block">
+        <div class="category-title">Chapters</div>
+        <ul class="chapter-list">
+          <li><a href="https://drive.google.com/file/d/1xH02HAV6gKWcYqeCojDYPnFV4jzP40dF/preview">Real Numbers</a></li>
+          <li><a href="https://drive.google.com/file/d/13zuYiakBLVFDY2p4kNvVeTz4WBS789O8/preview">Polynomial</a></li>
+          <li><a href="https://drive.google.com/file/d/1jzWaUVn3V0dJnSPArezdtPopt2e8pmxS/preview">Pair of Linear Equations in Two Variables</a></li>
+          <li><a href="https://drive.google.com/file/d/16xih4EGHf9s5UNN1u_CbvRO3kRWRC9K3/preview">Quadratic Equations</a></li>
+          <li><a href="https://drive.google.com/file/d/1oFUdQro7ncCrg5aeMxLaw0Vx6Xup_Zan/preview">Arithmetic Progressions</a></li>
+          <li><a href="https://drive.google.com/file/d/12Rn864qFX1DHpgXfJxWotHBQ6Af3MVTT/preview">Triangles</a></li>
+          <li><a href="https://drive.google.com/file/d/1hKD9ivV3j_WKfx8zkljeLS8V3VJ1gBwZ/preview">Coordinate Geometry</a></li>
+          <li><a href="https://drive.google.com/file/d/1eSRYXYPDT-jlG0Vz0nmBylTz7nWUMzgY/preview">Introduction to Trignometry</a></li>
+          <li><a href="https://drive.google.com/file/d/1kJVYSmC44EkH8TGXYC1iSsuNYPXFQkii/preview">Some Applications of Trignometry</a></li>
+          <li><a href="https://drive.google.com/file/d/1ZdXD64l_fH3UsX1h57-v7LP5EgMi5b0d/preview">Circles</a></li>
+          <li><a href="https://drive.google.com/file/d/1O8BfiqIogkkVEFmHwbjG_qnH50FyJ4P0/preview">Area Related to Circles</a></li>
+                  <li><a href="https://drive.google.com/file/d/1eKRL1PiOwmnPugZGHRYAlw23eRr48vXj/preview">Surface Areas and Volumes</a></li>
+                  <li><a href="https://drive.google.com/file/d/1y9pyX9FjQKdK0WxxjDKvTCpx2Ow3M0qZ/preview">Statistics</a></li>
+                  <li><a href="https://drive.google.com/file/d/1OVj8fCQjhUryyBYVRH9XCKAYvhER2yLB/preview">Probability</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SSSVM <br><span style="font-size: 0.8em;">~Priyanshu Singh</span></p>
+    <a href="index.html" class="back-home-btn">⬅ Back to Home</a>
+  </footer>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

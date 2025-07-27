@@ -1,0 +1,482 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <title>SSSVM Class 10-F</title>    <style>  
+    body {  
+      font-family: 'Poppins', sans-serif;  
+      margin: 0;  
+      background-color: #fff1cc;  
+      color: #222;  
+    }  
+    .side-nav {  
+      transition: width 0.4s ease;  
+    }  
+    @keyframes fadeInCenter {  
+      0% { opacity: 0; transform: translate(-50%, -60%); }  
+      100% { opacity: 1; transform: translate(-50%, -50%); }  
+    }  
+    .header-container {  
+      background-color: #FFA64D;  
+      background-image: url('https://drive.google.com/uc?export=view&id=17C1FKTJVrySCL1So9OEoT24-Jvl1RWkS');  
+      background-repeat: no-repeat;  
+      background-position: center;  
+      background-size: contain;  
+      padding: 15px 10px;  
+      text-align: center;  
+      border: 3px solid black;  
+      border-radius: 8px;  
+      box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);  
+      margin: 15px;  
+    }  
+    .school-info h1 {  
+      font-family: 'Playfair Display', serif;  
+      font-size: 2.2rem;  
+      color: #000000;  
+      font-weight: 900;  
+      margin: 8px 0 12px 0;  
+      text-transform: uppercase;  
+    }  
+    .school-info h2, .school-info p {  
+      color: #041029;  
+      font-weight: 600;  
+      margin: 5px 0;  
+      font-size: 0.95rem;  
+    }  
+    .notice-bar {  
+      background-color: #ffcccb;  
+      color: #111;  
+      font-weight: bold;  
+      padding: 10px;  
+      font-size: 16px;  
+      border-top: 2px solid #d9534f;  
+      border-bottom: 2px solid #d9534f;  
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);  
+    }  
+  
+    nav {  
+      margin: 30px auto;  
+       
+     padding: 0 15px;  
+      max-width: 100%;  
+      text-align: center;  
+    }  
+  
+    .button-wrapper {  
+      max-width: 900px;  
+      margin: 0 auto;  
+      padding: 0 15px;  
+      box-sizing: border-box;  
+    }  
+  
+    .button-row {  
+      display: flex;  
+      justify-content: center;  
+      gap: 14px;  
+      flex-wrap: nowrap;  
+      margin-bottom: 14px;  
+        
+        
+    }  
+  
+    .btn {  
+      min-width: 120px;  
+      padding: 10px 18px;  
+      border-radius: 8px;  
+      font-weight: 600;  
+      text-decoration: none;  
+      transition: transform 0.3s ease, box-shadow 0.3s ease;  
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);  
+      font-size: 14px;  
+      color: #222;  
+      background-color: #a0c4ff;  
+      text-align: center;  
+      display: inline-block;  
+      user-select: none;  
+    }  
+  
+    .btn-home { background: #a0c4ff; }  
+    .btn-posts { background: #cdb4db; }  
+    .btn-pyqs { background: #ffd6a5; }  
+    .btn-notice { background: #ffadad; }  
+    .btn-homework { background: #ffd6a5; }  
+    .btn-books { background: #d0f4de; }  
+    .btn-ncert { background: #caffbf; }  
+    .btn-fee { background: #ffffb5; }  
+    .btn-contact { background: #b5ead7; }  
+    .btn-download { background: #ffb347; }  
+    .btn-students { background: #ffdfba; }  
+  
+    .btn:hover {  
+      transform: scale(1.05);  
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);  
+      cursor: pointer;  
+    }  
+  .glow-button {  
+      padding: 12px 24px;  
+      font-size: 16px;  
+      font-weight: 600;  
+      color: white;  
+      background-color: #007bff;  
+      border: none;  
+      border-radius: 8px;  
+      text-decoration: none;  
+      box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;  
+      transition: 0.3s ease-in-out;  
+      margin-top: 10px;  
+      display: inline-block;  
+    }  
+  
+    .glow-button:hover {  
+      box-shadow: 0 0 20px #00cfff, 0 0 40px #00cfff;  
+      transform: scale(1.05);  
+    }  
+  
+    .scroll-top {  
+      display: inline-block;  
+      background-color: #111;  
+      color: #fff;  
+      padding: 10px 20px;  
+      border-radius: 30px;  
+      text-decoration: none;  
+      font-weight: bold;  
+      font-size: 16px;  
+      margin: 30px auto;  
+      box-shadow: 0 0 15px #00f0ff;  
+      transition: 0.3s ease-in-out;  
+      cursor: pointer;  
+    }  
+  
+    .scroll-top:hover {  
+      background-color: #00f0ff;  
+      color: #111;  
+    }  
+  
+    #contact {  
+      max-width: 600px;  
+      margin: 0 auto 50px auto;  
+      padding: 20px;  
+      border: 2px solid #ccc;  
+      border-radius: 12px;  
+      background-color: #fffdf3;  
+    }  
+  
+    footer {  
+      text-align: center;  
+      padding: 15px;  
+      border-top: 1px solid #ccc;  
+      font-size: 14px;  
+      color: #666;  
+      margin-bottom: 30px;  
+    }  
+  
+    .main-box {  
+      background-color: #ffdb99;  
+      border: 3px solid #000;  
+      border-radius: 10px;  
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);  
+      padding: 30px 20px;  
+      margin: 15px;  
+    }  
+  
+    .side-nav {  
+      height: 100vh;  
+      width: 0;  
+      position: fixed;  
+      z-index: 1200;  
+      top: 0;  
+      left: 0;  
+      background-color: #ffdb99;  
+      overflow-x: hidden;  
+      overflow-y: auto;  
+      padding-top: 60px;  
+      box-shadow: 3px 0 10px rgba(0,0,0,0.3);  
+      border-right: 3px solid #000;  
+      border-radius: 0 20px 20px 0;  
+      max-width: 260px;  
+    }  
+  
+    .side-nav.open { width: 260px; }  
+  
+    .side-nav a {  
+      opacity: 0;  
+      transform: translateX(-30px);  
+      transition: opacity 0.3s ease, transform 0.3s ease;  
+      padding: 14px 30px;  
+      text-decoration: none;  
+      font-size: 16px;  
+      color: #222;  
+      display: block;  
+      font-weight: 600;  
+      border-radius: 8px;  
+      margin: 6px 12px;  
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);  
+    }  
+  
+    .side-nav.open a {  
+      opacity: 1;  
+      transform: translateX(0);  
+    }  
+  
+    .side-nav a:hover {  
+      background-color: #ffd580;  
+      color: #000;  
+      box-shadow: 0 0 10px #ffb347;  
+    }  
+  
+    .menu-icon {  
+      font-size: 28px;  
+      cursor: pointer;  
+      position: fixed;  
+      top: 18px;  
+      left: 18px;  
+      z-index: 1300;  
+      color: #000;  
+      background: #ffdb99;  
+      padding: 6px 12px;  
+      border-radius: 8px;  
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);  
+    }  
+  
+    #overlay {  
+      display: none;  
+      position: fixed;  
+      z-index: 1100;  
+      top: 0;  
+      left: 0;  
+      width: 100vw;  
+      height: 100vh;  
+      background: transparent;  
+    }  
+    #ad-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease;
+  }
+  .ad-content {
+    background: #fffbe6;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: zoomIn 0.4s ease;
+    max-width: 320px;
+    border: 2px solid #000;
+  }
+
+  .ad-content h2 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #d62828;
+  }
+
+  .ad-content p {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+  }
+
+  .close-btn:hover {
+    color: #000;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  </style>  </head>  <body>  
+  
+  <div id="sideNav" class="side-nav">  
+    <a href="#" onclick="closeNav()">🏠 HOME</a>  
+    <a href="https://drive.google.com/file/d/14p80M0_mtte4Xfa_rCgKruxyV8wbwS7c/preview" target="_blank">👨‍🎓 STUDENTS LIST</a>  
+    <a href="homework.html">📚 HOMEWORK</a>  
+    <a href="Notices.html">📢 NOTICE</a>  
+    <a href="post.html">✍ POSTS</a>  
+    <a href="Books.html">📖 BOOKS</a>  
+    <a href="ncertsolution.html">💡 NCERT SOLUTIONS</a>  
+    <a href="pyqs.html">⏳ PYQs</a>  
+    <a href="mindmaps.html">🧠 Mindmaps</a>  
+    <a href="https://drive.google.com/file/d/1BsiH8XD-QKUZZca6jmtqI6vKma2f4kSB/preview
+">🗺️ MAP-WORKS</a> 
+     <a href="gallery.html">📸 Gallery</a>  
+    <a href="#contact" onclick="closeNav()">☎ CONTACT US</a>  
+    <a href="#FeePayment" onclick="closeNav()">💸 FEE PAYMENT</a>  
+    <a href="#" onclick="shareWebsite()">📤 SHARE WEBSITE</a>  
+    <a href="https://wa.me/?text=Check%20out%20the%20SSSVM%20Class%2010-F%20website:%20https%3A%2F%2Fsssvmclass10thf.github.io/ssvmclass10thf/" target="_blank">💬 SHARE ON WHATSAPP</a>  
+  </div>    <div id="overlay"></div>  
+  <span class="menu-icon" id="menuToggle">&#9776;</span>    <header>  
+    <div class="header-container">  
+      <div class="school-info">  
+        <h1>🕉<br> Saraswati Senior Secondary Vidya Mandir</h1>  
+        <h2>Class 10th - Section F</h2>  
+        <p><strong>Class Teacher:</strong> Mr. ASHOK YADAV JI</p>  
+        <strong>(Developer:</strong> <span style="font-family: 'Dancing Script', cursive; font-size: 17px; color: #333;">Priyanshu Singh</span>)  
+      </div>  
+    </div>  
+  </header>    <div class="notice-bar">  
+    <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">  
+      🔔 आवश्यक सूचना:- सभी भैयाओ को सूचित किया जाता है कि विद्यालय में खेल की प्रतियोगिता होने के कारण विद्यालय 28 एवं 29 जुलाई को अनाध्याय रहेगा।। पुनः 30 जुलाई को अपने निर्धारित समय से खुलेगा।.....
+<br> 
+      
+    </marquee>  
+  </div>    <nav>  
+    <div class="button-wrapper">  
+      <div class="button-row">  
+        <a href="#" class="btn btn-home">🏠 HOME</a>  
+        <a href="post.html" class="btn btn-posts">✍ POSTS</a>  
+      </div>  
+      <div class="button-row">  
+        <a href="Notices.html" class="btn btn-notice">📢 NOTICE</a>  
+        <a href="homework.html" class="btn btn-homework">📚 HOMEWORK</a>  
+      </div>  
+      <div class="button-row">  
+        <a href="Books.html" class="btn btn-books">📖 BOOKS</a>  
+        <a href="ncertsolution.html" class="btn btn-ncert">💡 NCERT SOLUTIONS</a>  
+      </div>  
+      <div class="button-row">  
+        <a href="#FeePayment" class="btn btn-fee">💸 FEE PAYMENT</a>  
+        <a href="#contact" class="btn btn-contact">☎ CONTACT US</a>  
+      </div>  
+      <div class="button-row">  
+        <a href="mindmaps.html" class="btn btn-download">🧠 MINDMAPS</a>  
+        <a href="https://drive.google.com/file/d/14p80M0_mtte4Xfa_rCgKruxyV8wbwS7c/preview" target="_blank" class="btn btn-students">👨‍🎓 STUDENT LIST</a>  
+      </div>  
+      <div class="button-row" style="justify-content: center;">  
+        <a href="pyqs.html" class="btn btn-pyqs">⏳ PYQs</a>  
+        <a href="https://drive.google.com/file/d/1BsiH8XD-QKUZZca6jmtqI6vKma2f4kSB/preview
+" class="btn btn-ncert">🗺️ MAP-WORKS</a> 
+      </div>  
+      <div class="button-wrapper">  
+      <div class="button-row">  
+        <a href="gallery.html" class="btn btn-home">📸 GALLERY</a>  
+      </div> 
+    </div>  
+  </nav>    <main>  
+    <div class="main-box">  
+      <section id="StudentsList">  
+        <h2>📄 STUDENT LIST</h2>  
+        <a class="glow-button" href="https://sssvmclass10thf.github.io/ssvmclass10thf/Fancy_Student_List.pdf" target="_blank">📥 View Student List PDF</a>  
+      </section>  <br />  
+
+  <section id="FeePayment">  
+    <h2>💸 ONLINE FEE PAYMENT</h2>  
+    <a class="glow-button" href="https://deoriasvm.com/Student-Login">📥 ONLINE FEE PAYMENT</a>  
+  </section>  
+
+  <br />  
+
+  <section id="School Official Website">  
+    <h2>🌐 OFFICIAL WEBSITE</h2>  
+    <a class="glow-button" href="https://deoriasvm.com/">📥 OFFICIAL WEBSITE</a>  
+  </section>  
+
+  <br />  
+
+  <section id="TC Request">  
+    <h2>🎓 TC REQUEST</h2>  
+    <a class="glow-button" href="https://deoriasvm.com/tc-request">📥 TC REQUEST</a>  
+  </section>  
+</div>  
+
+<br /><br />  
+
+<section id="contact">  
+  <h2>📞 CONTACT US</h2>  
+  <p><strong>🏫 School Address:</strong> Saraswati Senior Secondary Vidya Mandir, Deoria Khas, Deoria (U.P.)</p>  
+  <p><strong>👨‍🏫 Class Teacher's Phone:</strong> <a href="tel:+919451478144">+91 94514 78144</a></p>  
+  <p><strong>💬 Developer's WhatsApp:</strong> <a href="https://wa.me/919198426858" target="_blank" rel="noopener">Chat on WhatsApp</a></p>  
+  <p><strong>📧 Developer's Email:</strong> <a href="mailto:priyanshusingh0606@gmail.com">priyanshusingh0606@gmail.com</a></p>  
+</section>  
+
+
+
+<br>  
+<footer>  
+  <a href="#top" class="scroll-top">🚀 Fly to Top</a>  
+  <p>© 2025 SSSVM CLASS 10th F | 🙏 Made with Faith & Love</p>  
+</footer>
+
+  </main>    <script>  
+    const sideNav = document.getElementById("sideNav");  
+    const menuToggle = document.getElementById("menuToggle");  
+    const overlay = document.getElementById("overlay");  
+  
+    function openNav() {  
+      sideNav.classList.add("open");  
+      overlay.style.display = "block";  
+      document.body.style.overflow = "hidden";  
+    }  
+  
+    function closeNav() {  
+      sideNav.classList.remove("open");  
+      overlay.style.display = "none";  
+      document.body.style.overflow = "auto";  
+    }  
+  
+    function toggleNav() {  
+      sideNav.classList.contains("open") ? closeNav() : openNav();  
+    }  
+  
+    menuToggle.addEventListener("click", toggleNav);  
+    overlay.addEventListener("click", closeNav);  
+    document.addEventListener("keydown", (e) => {  
+      if (e.key === "Escape" && sideNav.classList.contains("open")) {  
+        closeNav();  
+      }  
+    });  
+  
+    function shareWebsite() {  
+      const shareData = {  
+        title: 'Visit SSSVM Class 10-F Website',  
+        text: 'Check out our class website now!',  
+        url: window.location.href  
+      };  
+  
+      if (navigator.share) {  
+        navigator.share(shareData)  
+          .then(() => console.log('Shared successfully'))  
+          .catch((err) => console.log('Share failed', err));  
+      } else {  
+        const dummy = document.createElement("input");  
+        document.body.appendChild(dummy);  
+        dummy.value = shareData.url;  
+        dummy.select();  
+        document.execCommand("copy");  
+        document.body.removeChild(dummy);  
+        alert("🔗 Link copied! You can now paste it anywhere.");  
+      }  
+    }  
+    // Auto close after 4 seconds
+  setTimeout(() => {
+    closeAd();
+  }, 4000);
+
+  function closeAd() {
+    const ad = document.getElementById("ad-popup");
+    if (ad) ad.style.display = "none";
+  }
+  </script>  </body>  
+</html>
